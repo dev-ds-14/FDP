@@ -3,877 +3,1078 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FDP — Digital Marketing for Faculty | DG Vaishnav College × Digital Scholar</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<title>FDP — Digital Marketing | DG Vaishnav College × Digital Scholar</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #0e0d0c;
-    --surface: #161513;
-    --card: #1c1a18;
-    --border: #272420;
-    --text: #ece8e2;
-    --muted: #7d776f;
-    --faint: #252220;
-    --gold: #F5A623;
-    --gold-dim: rgba(245,166,35,0.10);
-    --gold-border: rgba(245,166,35,0.22);
-    --green: #52b788;
-    --blue: #74aed4;
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    --px: clamp(24px, 7vw, 130px);
-    --py: clamp(36px, 4.5vw, 64px);
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #F5EDD6;
+    --gold-pale: #FBF7EE;
+    --ink: #1A1410;
+    --ink-mid: #3D3228;
+    --ink-soft: #6B5C4E;
+    --ink-muted: #9E8E82;
+    --cream: #FDFAF5;
+    --cream-dark: #F3EDE3;
+    --white: #FFFFFF;
+    --border: rgba(201,168,76,0.25);
+    --border-light: rgba(201,168,76,0.12);
   }
 
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
 
   body {
-    background: var(--bg);
-    color: var(--text);
     font-family: 'DM Sans', sans-serif;
-    font-size: clamp(13.5px, 1.4vw, 15px);
-    line-height: 1.65;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
   }
 
-  /* ─── TOP BANNER ─── */
-  .topbar {
-    background: var(--gold);
-    color: #1a1000;
-    font-size: clamp(10px, 1.1vw, 11px);
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 10px var(--px);
-    text-align: center;
-  }
-
-  /* ─── HEADER / HERO ─── */
-  .hero {
-    padding: var(--py) var(--px) clamp(32px, 4vw, 56px);
-    border-bottom: 1px solid var(--border);
+  /* COVER */
+  .cover {
+    background: var(--ink);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 60px 64px;
     position: relative;
     overflow: hidden;
   }
-
-  .hero::before {
+  .cover::before {
     content: '';
     position: absolute;
-    top: -160px; right: -120px;
-    width: 520px; height: 520px;
-    background: radial-gradient(circle, rgba(245,166,35,0.09) 0%, transparent 65%);
-    pointer-events: none;
+    top: -120px; right: -120px;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.15);
   }
-
-  .hero-tags {
-    display: flex; flex-wrap: wrap; gap: 8px;
-    margin-bottom: 24px; position: relative; z-index: 1;
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -80px;
+    width: 340px; height: 340px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.10);
   }
-
-  .tag {
-    font-size: clamp(9px, 1vw, 10px);
-    font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase;
-    border: 1px solid var(--border); border-radius: 3px;
-    padding: 4px 12px; color: var(--muted);
-  }
-  .tag.accent { color: var(--gold); border-color: var(--gold-border); background: var(--gold-dim); }
-
-  .hero h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(52px, 10vw, 104px);
-    line-height: 0.90;
-    letter-spacing: 0.01em;
+  .cover-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     position: relative; z-index: 1;
   }
-  .hero h1 em { color: var(--gold); font-style: normal; }
-
-  .hero-sub {
-    margin-top: 18px;
-    font-size: clamp(13px, 1.45vw, 15px);
-    color: var(--muted);
-    max-width: 620px;
-    line-height: 1.75;
-    position: relative; z-index: 1;
-  }
-
-  .hero-pills {
-    display: flex; flex-wrap: wrap; gap: 10px;
-    margin-top: 30px; position: relative; z-index: 1;
-  }
-
-  .pill {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 9px 18px;
-    font-size: clamp(11px, 1.1vw, 12.5px);
+  .brand-mark {
+    font-size: 11px;
     font-weight: 500;
-    display: flex; align-items: center; gap: 8px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
   }
-  .pill .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
-
-  /* ─── SECTIONS ─── */
-  section { padding: var(--py) var(--px); border-bottom: 1px solid var(--border); }
-
-  .sec-label {
-    font-size: clamp(9px, 1vw, 10px);
-    font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
-    color: var(--gold); margin-bottom: 10px;
+  .confidential-tag {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(201,168,76,0.6);
+    border: 1px solid rgba(201,168,76,0.2);
+    padding: 5px 14px;
+    border-radius: 20px;
   }
-
-  .sec-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(30px, 4.5vw, 50px);
-    line-height: 1; letter-spacing: 0.02em;
-    color: var(--text); margin-bottom: 14px;
+  .cover-body { position: relative; z-index: 1; }
+  .cover-eyebrow {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
   }
-
-  .sec-body {
-    font-size: clamp(12.5px, 1.35vw, 14px);
-    color: var(--muted);
-    max-width: 680px;
+  .cover-eyebrow::before {
+    content: '';
+    width: 32px; height: 1px;
+    background: var(--gold);
+    display: inline-block;
+  }
+  .cover-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 6vw, 72px);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.08;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .cover-title span { color: var(--gold); font-style: italic; }
+  .cover-subtitle {
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 56px;
+    max-width: 560px;
+    line-height: 1.65;
+  }
+  .cover-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 12px;
+    overflow: hidden;
+    max-width: 760px;
+  }
+  .meta-item {
+    padding: 20px 24px;
+    border-right: 1px solid rgba(201,168,76,0.15);
+  }
+  .meta-item:last-child { border-right: none; }
+  .meta-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(201,168,76,0.6);
+    margin-bottom: 6px;
+  }
+  .meta-value {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--white);
+    line-height: 1.3;
+  }
+  .cover-bottom {
+    position: relative; z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 1px solid rgba(201,168,76,0.15);
+    padding-top: 28px;
+  }
+  .prepared-by {
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    font-weight: 300;
+  }
+  .prepared-by strong {
+    color: rgba(255,255,255,0.75);
+    font-weight: 500;
+    display: block;
+    font-size: 14px;
+    margin-bottom: 2px;
+  }
+  .contact-info {
+    text-align: right;
+    font-size: 11px;
+    color: rgba(201,168,76,0.55);
     line-height: 1.8;
   }
 
-  /* ─── STAT ROW ─── */
-  .stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 1px; background: var(--border);
-    border: 1px solid var(--border);
-    border-radius: 10px; overflow: hidden;
-    margin-top: 34px;
+  /* MAIN */
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 40px;
   }
 
-  .stat {
-    background: var(--card);
-    padding: clamp(18px, 2vw, 28px) clamp(16px, 2vw, 24px);
-  }
-
-  .stat-n {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(36px, 5vw, 54px);
-    color: var(--gold); line-height: 1;
-  }
-
-  .stat-l {
-    font-size: clamp(10px, 1.05vw, 11.5px);
-    color: var(--muted); font-weight: 500;
-    margin-top: 4px; line-height: 1.4;
-  }
-
-  /* ─── OVERVIEW CARDS ─── */
-  .overview-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-    gap: 12px; margin-top: 30px;
-  }
-
-  .ov-card {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 8px; padding: 22px 20px;
-  }
-
-  .ov-icon { font-size: 24px; margin-bottom: 10px; line-height: 1; }
-
-  .ov-label {
-    font-size: clamp(9px, 1vw, 10px);
-    font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--muted); margin-bottom: 5px;
-  }
-
-  .ov-value {
-    font-size: clamp(13px, 1.4vw, 15px);
-    font-weight: 600; color: var(--text); line-height: 1.3;
-  }
-
-  /* ─── MODULE CARDS ─── */
-  .modules-grid {
-    display: flex; flex-direction: column; gap: 14px;
-    margin-top: 32px;
-  }
-
-  .module-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
+  /* OBJECTIVE BLOCK */
+  .objective-block {
+    background: var(--ink);
+    border-radius: 16px;
+    padding: 48px 52px;
+    margin-bottom: 72px;
+    position: relative;
     overflow: hidden;
-    transition: border-color 0.2s ease;
   }
-
-  .module-card:hover { border-color: var(--gold-border); }
-
-  .module-header {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: start;
-    gap: 20px;
-    padding: clamp(18px, 2vw, 26px) clamp(18px, 2vw, 28px);
-    cursor: pointer;
+  .objective-block::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.12);
   }
-
-  .module-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(28px, 4vw, 40px);
-    color: var(--gold);
-    line-height: 1;
-    opacity: 0.6;
-    flex-shrink: 0;
-    width: 48px;
-    text-align: right;
-  }
-
-  .module-info { flex: 1; }
-
-  .module-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(18px, 2.8vw, 28px);
-    letter-spacing: 0.02em;
-    line-height: 1.05;
-    color: var(--text);
-    margin-bottom: 6px;
-  }
-
-  .module-tagline {
-    font-size: clamp(11.5px, 1.2vw, 13px);
-    color: var(--muted);
-    line-height: 1.55;
-  }
-
-  .module-duration {
-    font-size: clamp(10px, 1vw, 11px);
+  .obj-label {
+    font-size: 10px;
     font-weight: 600;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--muted);
-    border: 1px solid var(--border);
-    padding: 4px 10px;
-    border-radius: 4px;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+  .objective-block p {
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.82);
+    line-height: 1.75;
+    max-width: 620px;
+    position: relative; z-index: 1;
+  }
+  .objective-block p strong {
+    color: var(--white);
+    font-weight: 500;
+  }
+
+  /* SECTION HEADER */
+  .section-header { margin-bottom: 40px; }
+  .section-eyebrow {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-eyebrow::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+    max-width: 60px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 4vw, 38px);
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+  .section-divider {
+    border: none;
+    border-top: 1px solid var(--border-light);
+    margin: 64px 0;
+  }
+
+  /* MODULE CARDS */
+  .modules-section { margin-bottom: 72px; }
+  .module-card {
+    background: var(--white);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .module-header {
+    background: var(--ink);
+    padding: 22px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .module-header-left { display: flex; align-items: center; gap: 16px; }
+  .module-num {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(201,168,76,0.6);
+    white-space: nowrap;
+  }
+  .module-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1.3;
+  }
+  .module-duration {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(201,168,76,0.55);
     white-space: nowrap;
     flex-shrink: 0;
   }
-
-  .module-body {
-    border-top: 1px solid var(--border);
-    padding: clamp(16px, 2vw, 24px) clamp(18px, 2vw, 28px);
+  .module-body { padding: 28px 32px; }
+  .module-desc {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.65;
+    font-style: italic;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .module-topics {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 24px;
+    gap: 8px 24px;
+    margin-bottom: 20px;
   }
-
-  @media (max-width: 600px) {
-    .module-body { grid-template-columns: 1fr; }
-  }
-
-  .module-col-title {
-    font-size: clamp(9px, 1vw, 10px);
-    font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--gold); margin-bottom: 12px;
-  }
-
-  .topic-list {
-    list-style: none;
-    display: flex; flex-direction: column; gap: 7px;
-  }
-
-  .topic-list li {
-    font-size: clamp(12px, 1.25vw, 13.5px);
-    color: var(--muted);
-    display: flex; align-items: flex-start; gap: 9px;
+  .topic-item {
+    font-size: 13px;
+    color: var(--ink-soft);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
     line-height: 1.5;
   }
-
-  .topic-list li::before {
-    content: '';
-    width: 4px; height: 4px; border-radius: 50%;
-    background: var(--gold); flex-shrink: 0;
-    margin-top: 6px; opacity: 0.6;
+  .topic-item::before {
+    content: '—';
+    color: var(--gold);
+    flex-shrink: 0;
+    font-size: 12px;
+    margin-top: 1px;
   }
-
-  .practical-box {
-    background: var(--faint);
+  .module-outcome {
+    background: var(--gold-pale);
     border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 14px 16px;
-    margin-top: 4px;
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 13px;
+    color: var(--ink-mid);
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .module-outcome strong {
+    color: var(--gold);
+    font-weight: 600;
+    flex-shrink: 0;
   }
 
-  .practical-label {
-    font-size: clamp(8.5px, 0.9vw, 9.5px);
-    font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--green); margin-bottom: 7px;
+  /* DEPT-STYLE ROWS (for AI session tools) */
+  .dept-card {
+    background: var(--white);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 20px;
   }
-
-  .practical-text {
-    font-size: clamp(11.5px, 1.2vw, 13px);
-    color: var(--muted);
+  .dept-header {
+    background: var(--ink);
+    padding: 20px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .dept-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--white);
+  }
+  .dept-tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(201,168,76,0.55);
+  }
+  .dept-body { padding: 0; }
+  .dept-row {
+    padding: 18px 32px;
+    border-bottom: 1px solid var(--border-light);
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+  .dept-row:last-child { border-bottom: none; }
+  .dept-row-title {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+  .dept-row-desc {
+    font-size: 13px;
+    color: var(--ink-soft);
     line-height: 1.6;
   }
 
-  /* ─── WHO IS THIS FOR ─── */
-  .audience-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 12px; margin-top: 28px;
+  /* INCLUSIONS */
+  .inclusions {
+    background: var(--white);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    padding: 36px;
+    margin-bottom: 72px;
   }
-
-  .aud-card {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 8px; padding: 22px 20px;
-    display: flex; align-items: flex-start; gap: 14px;
+  .inclusions h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 24px;
   }
-
-  .aud-icon {
-    width: 38px; height: 38px; border-radius: 8px;
-    background: var(--gold-dim); border: 1px solid var(--gold-border);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 18px; flex-shrink: 0;
-  }
-
-  .aud-text {}
-  .aud-title { font-size: clamp(13px, 1.35vw, 14.5px); font-weight: 600; color: var(--text); margin-bottom: 4px; }
-  .aud-desc { font-size: clamp(11px, 1.1vw, 12px); color: var(--muted); line-height: 1.55; }
-
-  /* ─── OUTCOMES ─── */
-  .outcomes-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 12px; margin-top: 28px;
-  }
-
-  .outcome-card {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 8px; padding: 20px;
-    display: flex; align-items: flex-start; gap: 12px;
-  }
-
-  .outcome-check {
-    width: 22px; height: 22px; border-radius: 50%;
-    background: rgba(82,183,136,0.12); border: 1px solid rgba(82,183,136,0.25);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 11px; flex-shrink: 0; color: var(--green);
-  }
-
-  .outcome-text {
-    font-size: clamp(12px, 1.25vw, 13.5px);
-    color: var(--muted); line-height: 1.6;
-  }
-
-  /* ─── ABOUT SECTION ─── */
-  .about-layout {
+  .inclusions-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: clamp(32px, 4vw, 60px);
-    margin-top: 32px;
-    align-items: start;
+    gap: 14px;
+  }
+  .inclusion-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+  .tick {
+    width: 18px; height: 18px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+    font-size: 9px;
+    font-weight: 700;
+    color: var(--ink);
+    min-width: 18px;
   }
 
-  @media (max-width: 680px) { .about-layout { grid-template-columns: 1fr; } }
-
-  .about-body {
-    font-size: clamp(12.5px, 1.35vw, 14px);
-    color: var(--muted); line-height: 1.8;
+  /* DELIVERY TABLE */
+  .delivery-table {
+    background: var(--white);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 72px;
   }
-
-  .about-body p + p { margin-top: 14px; }
-
-  .cred-list {
-    list-style: none;
-    display: flex; flex-direction: column; gap: 10px;
-  }
-
-  .cred-list li {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 6px; padding: 12px 16px;
-    font-size: clamp(11.5px, 1.2vw, 13px);
-    color: var(--muted);
-    display: flex; align-items: flex-start; gap: 10px;
-  }
-
-  .cred-list li::before {
-    content: '✦';
-    color: var(--gold); font-size: 10px; flex-shrink: 0; margin-top: 2px;
-  }
-
-  /* ─── COMMERCIALS ─── */
-  .commercial-box {
-    background: var(--card);
-    border: 1px solid var(--gold-border);
-    border-radius: 12px;
-    padding: clamp(28px, 3vw, 44px) clamp(24px, 3vw, 40px);
-    margin-top: 32px;
+  .delivery-row {
     display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 32px;
+    grid-template-columns: 220px 1fr;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .delivery-row:last-child { border-bottom: none; }
+  .delivery-label {
+    background: var(--gold-pale);
+    padding: 16px 24px;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--ink-mid);
+    display: flex;
+    align-items: center;
+    border-right: 1px solid var(--border);
+  }
+  .delivery-value {
+    padding: 16px 24px;
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    display: flex;
     align-items: center;
   }
 
-  @media (max-width: 600px) { .commercial-box { grid-template-columns: 1fr; } }
-
-  .commercial-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(14px, 2vw, 20px);
-    letter-spacing: 0.06em;
-    color: var(--muted);
-    text-transform: uppercase;
-    margin-bottom: 8px;
+  /* OUTCOMES GRID */
+  .outcomes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 72px;
   }
-
-  .commercial-price {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(44px, 7vw, 72px);
-    color: var(--gold);
-    line-height: 1;
-    letter-spacing: 0.01em;
+  .outcome-item {
+    background: var(--white);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    padding: 20px 22px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
   }
-
-  .commercial-note {
-    font-size: clamp(11px, 1.15vw, 12.5px);
-    color: var(--muted);
-    margin-top: 8px;
+  .outcome-item .tick { margin-top: 2px; }
+  .outcome-text {
+    font-size: 13.5px;
+    color: var(--ink-soft);
     line-height: 1.6;
   }
 
-  .included-list {
-    list-style: none;
-    display: flex; flex-direction: column; gap: 8px;
+  /* NOTES / COMMERCIALS */
+  .notes-section {
+    background: var(--ink);
+    border-radius: 16px;
+    padding: 40px 48px;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .notes-section::before {
+    content: '';
+    position: absolute;
+    bottom: -80px; right: -80px;
+    width: 260px; height: 260px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.1);
+  }
+  .notes-section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--gold);
+    margin-bottom: 20px;
+    position: relative; z-index: 1;
+  }
+  .note-item {
+    display: flex;
+    gap: 14px;
+    font-size: 13.5px;
+    color: rgba(253,250,245,0.6);
+    margin-bottom: 12px;
+    line-height: 1.65;
+    position: relative; z-index: 1;
+  }
+  .note-item::before {
+    content: '↗';
+    color: var(--gold);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .note-item:last-child { margin-bottom: 0; }
+
+  /* PAYMENT */
+  .payment-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 72px;
+  }
+  .payment-card {
+    background: var(--gold-pale);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 28px;
+  }
+  .payment-card-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+  .payment-card-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .payment-card-desc {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.6;
   }
 
-  .included-list li {
-    font-size: clamp(11.5px, 1.2vw, 13px);
-    color: var(--muted);
-    display: flex; align-items: center; gap: 8px;
+  /* CTA BLOCK */
+  .cta-block {
+    background: var(--ink);
+    border-radius: 16px;
+    padding: 52px 56px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 72px;
+  }
+  .cta-block::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 280px; height: 280px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.1);
+  }
+  .cta-block::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: -60px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.08);
+  }
+  .cta-block h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 12px;
+    position: relative; z-index: 1;
+  }
+  .cta-block p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.5);
+    max-width: 520px;
+    margin: 0 auto 28px;
+    line-height: 1.65;
+    position: relative; z-index: 1;
+  }
+  .cta-contact {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 8px;
+    position: relative; z-index: 1;
+  }
+  .cta-links {
+    font-size: 12px;
+    color: rgba(255,255,255,0.25);
+    position: relative; z-index: 1;
   }
 
-  .included-list li .check {
-    width: 18px; height: 18px; border-radius: 50%;
-    background: rgba(82,183,136,0.12);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 9px; color: var(--green); flex-shrink: 0;
-  }
-
-  /* ─── CONTACT ─── */
-  .contact-bar {
-    display: flex; flex-wrap: wrap; gap: 12px;
-    margin-top: 28px; align-items: center;
-  }
-
-  .contact-item {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 6px; padding: 10px 18px;
-    font-size: clamp(11px, 1.15vw, 12.5px);
-    color: var(--muted);
-    display: flex; align-items: center; gap: 8px;
-  }
-
-  .contact-item strong { color: var(--text); }
-
-  /* ─── FOOTER ─── */
+  /* FOOTER */
   .footer {
-    padding: clamp(24px, 2.5vw, 36px) var(--px);
-    display: flex; justify-content: space-between; align-items: center;
-    flex-wrap: wrap; gap: 12px;
+    background: var(--ink);
+    padding: 40px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
   }
-
   .footer-brand {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(20px, 2.5vw, 26px);
-    color: var(--gold); letter-spacing: 0.04em;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .footer-links { display: flex; gap: 28px; }
+  .footer-links a {
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+  }
+  .footer-copy {
+    font-size: 11px;
+    color: rgba(255,255,255,0.2);
+    width: 100%;
+    text-align: center;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(201,168,76,0.1);
   }
 
-  .footer-note {
-    font-size: clamp(10px, 1.1vw, 11.5px);
-    color: var(--muted);
-  }
-
-  /* ─── DIVIDER ─── */
-  .divider {
-    width: 40px; height: 2px;
-    background: var(--gold); opacity: 0.4;
-    margin: 16px 0;
-  }
-
-  /* ─── RESPONSIVE ─── */
-  @media (max-width: 480px) {
-    .module-header { grid-template-columns: auto 1fr; }
-    .module-duration { display: none; }
-    .hero h1 { font-size: 52px; }
+  @media (max-width: 700px) {
+    .cover { padding: 40px 28px; }
+    .cover-bottom { flex-direction: column; gap: 20px; }
+    .contact-info { text-align: left; }
+    .cover-meta-grid { grid-template-columns: 1fr 1fr; }
+    .meta-item { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.15); }
+    .meta-item:last-child { border-bottom: none; }
+    .page { padding: 48px 24px; }
+    .objective-block { padding: 32px 28px; }
+    .notes-section, .cta-block { padding: 36px 28px; }
+    .footer { padding: 32px 28px; flex-direction: column; align-items: flex-start; }
+    .module-topics { grid-template-columns: 1fr; }
+    .module-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .dept-row { grid-template-columns: 1fr; gap: 6px; }
+    .inclusions-grid { grid-template-columns: 1fr; }
+    .outcomes-grid { grid-template-columns: 1fr; }
+    .delivery-row { grid-template-columns: 1fr; }
+    .delivery-label { border-right: none; border-bottom: 1px solid var(--border); }
+    .payment-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
 
-<!-- TOP BAR -->
-<div class="topbar">Faculty Development Program · Digital Scholar × DG Vaishnav College · Marketing Management Department</div>
-
-<!-- HERO -->
-<header class="hero">
-  <div class="hero-tags">
-    <span class="tag accent">Faculty Development Program</span>
-    <span class="tag">DG Vaishnav College</span>
-    <span class="tag">Marketing Management Dept.</span>
-    <span class="tag">Delivered by Digital Scholar</span>
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-top">
+    <div class="brand-mark">Digital Scholar</div>
+    <div class="confidential-tag">Confidential</div>
   </div>
 
-  <h1>Digital<br>Marketing<br>For <em>Faculty</em></h1>
-
-  <p class="hero-sub">A structured Faculty Development Program for the Marketing Management Department at DG Vaishnav College. Designed to equip faculty with real-world digital marketing skills — from how brands grow online, to running actual campaigns. Practical, hands-on, and built for educators.</p>
-
-  <div class="hero-pills">
-    <div class="pill"><span class="dot"></span> Website & SEO</div>
-    <div class="pill"><span class="dot"></span> Social Media Marketing</div>
-    <div class="pill"><span class="dot"></span> Performance Marketing</div>
-    <div class="pill"><span class="dot"></span> Analytics & Reporting</div>
-    <div class="pill"><span class="dot"></span> Hands-On Practicals</div>
-  </div>
-</header>
-
-<!-- PROGRAM OVERVIEW -->
-<section>
-  <div class="sec-label">Program Overview</div>
-  <div class="sec-title">What This Program Covers</div>
-  <p class="sec-body">This FDP is designed to take faculty from foundational understanding to confident, practical application of digital marketing. Every session includes live tool walkthroughs and a hands-on activity. No theory without doing.</p>
-
-  <div class="overview-grid">
-    <div class="ov-card">
-      <div class="ov-icon">📅</div>
-      <div class="ov-label">Duration</div>
-      <div class="ov-value">6 Days<br><span style="font-weight:400;color:var(--muted);font-size:0.85em">2 Hours Per Day</span></div>
-    </div>
-    <div class="ov-card">
-      <div class="ov-icon">🎓</div>
-      <div class="ov-label">Format</div>
-      <div class="ov-value">Onsite<br><span style="font-weight:400;color:var(--muted);font-size:0.85em">DG Vaishnav College</span></div>
-    </div>
-    <div class="ov-card">
-      <div class="ov-icon">📦</div>
-      <div class="ov-label">Sessions</div>
-      <div class="ov-value">5 Core Sessions<br><span style="font-weight:400;color:var(--muted);font-size:0.85em">+ 1 Capstone Activity</span></div>
-    </div>
-    <div class="ov-card">
-      <div class="ov-icon">🛠️</div>
-      <div class="ov-label">Approach</div>
-      <div class="ov-value">Hands-On<br><span style="font-weight:400;color:var(--muted);font-size:0.85em">Live Demos + Practicals</span></div>
-    </div>
-    <div class="ov-card">
-      <div class="ov-icon">🏅</div>
-      <div class="ov-label">Certificate</div>
-      <div class="ov-value">Digital Scholar<br><span style="font-weight:400;color:var(--muted);font-size:0.85em">Completion Certificate</span></div>
-    </div>
-    <div class="ov-card">
-      <div class="ov-icon">👥</div>
-      <div class="ov-label">Batch Size</div>
-      <div class="ov-value">5 to 10 Faculty<br><span style="font-weight:400;color:var(--muted);font-size:0.85em">Marketing Management Dept.</span></div>
+  <div class="cover-body">
+    <div class="cover-eyebrow">Faculty Development Programme — Digital Marketing</div>
+    <h1 class="cover-title">DG Vaishnav College<br>× <span>Digital Scholar</span></h1>
+    <p class="cover-subtitle">A 6-day, hands-on Faculty Development Programme for the Marketing Management Department — covering the fundamentals of digital marketing through to practical application in SEO, social media, performance marketing, and AI-powered teaching tools.</p>
+    <div class="cover-meta-grid">
+      <div class="meta-item">
+        <div class="meta-label">Duration</div>
+        <div class="meta-value">6 Days<br>2 Hours / Day</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Format</div>
+        <div class="meta-value">Onsite<br>DG Vaishnav College</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Participants</div>
+        <div class="meta-value">5–20 Faculty<br>Mktg. Mgmt. Dept.</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Certificate</div>
+        <div class="meta-value">Digital Scholar<br>Completion Certificate</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Investment</div>
+        <div class="meta-value">&#8377;1,50,000<br>Flat Fee</div>
+      </div>
     </div>
   </div>
-</section>
 
-<!-- MODULES -->
-<section>
-  <div class="sec-label">Curriculum</div>
-  <div class="sec-title">5 Sessions, Zero Filler</div>
-  <p class="sec-body">Each session is built around a core pillar of digital marketing. Topics are drawn directly from industry practice, not textbooks. Every session ends with a practical activity faculty can apply immediately.</p>
+  <div class="cover-bottom">
+    <div class="prepared-by">
+      <strong>Rishi Jain</strong>
+      CEO, Digital Scholar &nbsp;·&nbsp; Corporate Trainer
+    </div>
+    <div class="contact-info">
+      bde@digitalscholar.in<br>
+      +91 86104 25655<br>
+      digitalscholar.in
+    </div>
+  </div>
+</div>
 
-  <div class="modules-grid">
+<!-- MAIN CONTENT -->
+<div class="page">
 
-    <!-- MODULE 1 -->
+  <!-- OBJECTIVE -->
+  <div class="objective-block">
+    <div class="obj-label">Programme Objective</div>
+    <p>This FDP is designed to give faculty of the Marketing Management Department at DG Vaishnav College <strong>practical fluency in digital marketing</strong> — not textbook theory, but the tools, platforms, and frameworks that brands actually use today. By the end, every participant will be equipped to teach these concepts confidently and apply them in research and institution-building contexts.</p>
+  </div>
+
+  <!-- PROGRAMME OVERVIEW -->
+  <div class="section-header">
+    <div class="section-eyebrow">Programme Structure</div>
+    <h2 class="section-title">Six Days. Six Pillars.</h2>
+  </div>
+
+  <div class="delivery-table" style="margin-bottom: 40px;">
+    <div class="delivery-row">
+      <div class="delivery-label">Day 1</div>
+      <div class="delivery-value">Digital Marketing Foundations — The full picture, the funnel, and how brands grow online</div>
+    </div>
+    <div class="delivery-row">
+      <div class="delivery-label">Day 2</div>
+      <div class="delivery-value">Website & Search Engine Optimisation — Building web presence, keyword research, on-page and technical SEO</div>
+    </div>
+    <div class="delivery-row">
+      <div class="delivery-label">Day 3</div>
+      <div class="delivery-value">Social Media Marketing — Platform strategy, content formats, calendars, and organic growth</div>
+    </div>
+    <div class="delivery-row">
+      <div class="delivery-label">Day 4</div>
+      <div class="delivery-value">Performance Marketing — Google Ads, Meta Ads, campaign structure, targeting, and key metrics</div>
+    </div>
+    <div class="delivery-row">
+      <div class="delivery-label">Day 5</div>
+      <div class="delivery-value">Analytics & Reporting — GA4, social insights, dashboards, and reading data that matters</div>
+    </div>
+    <div class="delivery-row">
+      <div class="delivery-label">Day 6</div>
+      <div class="delivery-value">AI for Teaching — Frameworks and tools for teaching digital marketing to students effectively</div>
+    </div>
+  </div>
+
+  <!-- MODULES -->
+  <div class="section-header">
+    <div class="section-eyebrow">Curriculum</div>
+    <h2 class="section-title">Session-by-Session Breakdown</h2>
+  </div>
+
+  <div class="modules-section">
+
+    <!-- DAY 1 -->
     <div class="module-card">
       <div class="module-header">
-        <div class="module-num">01</div>
-        <div class="module-info">
+        <div class="module-header-left">
+          <div class="module-num">Day 01</div>
           <div class="module-title">Digital Marketing Foundations</div>
-          <div class="module-tagline">How brands grow online. The full picture — from awareness to conversion.</div>
         </div>
-        <div class="module-duration">Session 1 · ~90 min</div>
+        <div class="module-duration">2 Hours</div>
       </div>
       <div class="module-body">
-        <div>
-          <div class="module-col-title">Topics Covered</div>
-          <ul class="topic-list">
-            <li>What is digital marketing and why it matters in 2025</li>
-            <li>Traditional vs digital: the real difference</li>
-            <li>The digital marketing funnel: Awareness, Consideration, Conversion</li>
-            <li>Overview of all channels: SEO, Social, Paid, Email, Content</li>
-            <li>How brands plan a digital strategy</li>
-            <li>Introduction to key tools and platforms</li>
-            <li>The role of data in every marketing decision</li>
-          </ul>
+        <p class="module-desc">How brands grow online. The full picture — from awareness to conversion — and why digital marketing is no longer optional for any business.</p>
+        <div class="module-topics">
+          <div class="topic-item">What is digital marketing and why it matters today</div>
+          <div class="topic-item">Traditional vs digital: the real difference</div>
+          <div class="topic-item">The marketing funnel: Awareness, Consideration, Conversion</div>
+          <div class="topic-item">Overview of all channels: SEO, Social, Paid, Email, Content</div>
+          <div class="topic-item">How brands plan and execute a digital strategy</div>
+          <div class="topic-item">The role of data in every marketing decision</div>
+          <div class="topic-item">Introduction to platforms and tools used in industry</div>
+          <div class="topic-item">Live brand analysis: mapping a real brand's digital footprint</div>
         </div>
-        <div>
-          <div class="module-col-title">Practical Activity</div>
-          <div class="practical-box">
-            <div class="practical-label">Hands-On</div>
-            <p class="practical-text">Participants map out a real brand's digital presence — identifying which channels they use, how they move customers through the funnel, and where the gaps are. Discuss and present to the room.</p>
-          </div>
+        <div class="module-outcome">
+          <strong>Hands-On:</strong> Participants map a real brand's digital presence — channels used, funnel stages, and content types — and present key observations to the room.
         </div>
       </div>
     </div>
 
-    <!-- MODULE 2 -->
+    <!-- DAY 2 -->
     <div class="module-card">
       <div class="module-header">
-        <div class="module-num">02</div>
-        <div class="module-info">
+        <div class="module-header-left">
+          <div class="module-num">Day 02</div>
           <div class="module-title">Website & Search Engine Optimisation</div>
-          <div class="module-tagline">How to build a web presence that Google finds — and people trust.</div>
         </div>
-        <div class="module-duration">Session 2 · ~2 hrs</div>
+        <div class="module-duration">2 Hours</div>
       </div>
       <div class="module-body">
-        <div>
-          <div class="module-col-title">Topics Covered</div>
-          <ul class="topic-list">
-            <li>What makes a good website — structure, speed, UX basics</li>
-            <li>Introduction to WordPress and how websites are built</li>
-            <li>What is SEO and how search engines work</li>
-            <li>On-page SEO: Title tags, meta descriptions, headings, alt text</li>
-            <li>Keyword research using Google Keyword Planner and SEMrush</li>
-            <li>Off-page SEO: Backlinks and domain authority explained simply</li>
-            <li>Technical SEO basics: page speed, mobile-friendliness, sitemaps</li>
-            <li>Google Business Profile setup for local visibility</li>
-            <li>What is AEO (Answer Engine Optimisation) — the AI search era</li>
-          </ul>
+        <p class="module-desc">How to build and optimise a web presence that search engines rank and users trust. Covering the full SEO spectrum — on-page, off-page, and technical.</p>
+        <div class="module-topics">
+          <div class="topic-item">What makes a good website: structure, speed, and UX basics</div>
+          <div class="topic-item">Introduction to WordPress and how websites are built</div>
+          <div class="topic-item">What is SEO and how search engines work</div>
+          <div class="topic-item">On-page SEO: titles, meta descriptions, headings, alt text</div>
+          <div class="topic-item">Keyword research using Google Keyword Planner and SEMrush</div>
+          <div class="topic-item">Off-page SEO: backlinks and domain authority explained</div>
+          <div class="topic-item">Technical SEO: page speed, mobile-friendliness, sitemaps</div>
+          <div class="topic-item">Google Business Profile for local visibility</div>
         </div>
-        <div>
-          <div class="module-col-title">Practical Activity</div>
-          <div class="practical-box">
-            <div class="practical-label">Hands-On</div>
-            <p class="practical-text">Participants run a free SEO audit on a live website using Google's PageSpeed Insights and identify the top 3 on-page fixes. Then use Google Keyword Planner to find keywords for a topic of their choice.</p>
-          </div>
+        <div class="module-outcome">
+          <strong>Hands-On:</strong> Run a free SEO audit on a live website using Google PageSpeed Insights. Then use Google Keyword Planner to find keywords for a topic of their choice.
         </div>
       </div>
     </div>
 
-    <!-- MODULE 3 -->
+    <!-- DAY 3 -->
     <div class="module-card">
       <div class="module-header">
-        <div class="module-num">03</div>
-        <div class="module-info">
+        <div class="module-header-left">
+          <div class="module-num">Day 03</div>
           <div class="module-title">Social Media Marketing</div>
-          <div class="module-tagline">How platforms work, what content wins, and how to build an audience that converts.</div>
         </div>
-        <div class="module-duration">Session 3 · ~2 hrs</div>
+        <div class="module-duration">2 Hours</div>
       </div>
       <div class="module-body">
-        <div>
-          <div class="module-col-title">Topics Covered</div>
-          <ul class="topic-list">
-            <li>Overview of platforms: Instagram, LinkedIn, YouTube, Facebook</li>
-            <li>How algorithms decide what content to show</li>
-            <li>Content formats: Reels, Carousels, Stories, Long-form</li>
-            <li>Content calendar: How to plan 30 days of posts</li>
-            <li>Brand voice and visual identity on social media</li>
-            <li>Organic growth strategies: hashtags, engagement, community</li>
-            <li>Influencer marketing basics</li>
-            <li>Social media analytics: what to track and why</li>
-            <li>AI tools for content creation (Canva AI, ChatGPT for captions)</li>
-          </ul>
+        <p class="module-desc">How platforms work, what content wins, and how to build an audience that converts. Covering the major platforms with practical content creation exercises.</p>
+        <div class="module-topics">
+          <div class="topic-item">Platform overview: Instagram, LinkedIn, YouTube, Facebook</div>
+          <div class="topic-item">How algorithms decide what content gets shown</div>
+          <div class="topic-item">Content formats: Reels, Carousels, Stories, Long-form</div>
+          <div class="topic-item">Building a 30-day content calendar</div>
+          <div class="topic-item">Brand voice and visual identity on social media</div>
+          <div class="topic-item">Organic growth strategies: hashtags, engagement, community</div>
+          <div class="topic-item">Influencer marketing basics</div>
+          <div class="topic-item">Social media analytics: what to track and why</div>
         </div>
-        <div>
-          <div class="module-col-title">Practical Activity</div>
-          <div class="practical-box">
-            <div class="practical-label">Hands-On</div>
-            <p class="practical-text">Participants build a 1-week content calendar for a mock brand using a Canva template and write 3 real captions — one for Instagram, one for LinkedIn, one for a Reel script. Peer review in pairs.</p>
-          </div>
+        <div class="module-outcome">
+          <strong>Hands-On:</strong> Build a 1-week content calendar for a mock brand. Write 3 captions — one for Instagram, one for LinkedIn, one as a Reel script — using Canva AI for visuals.
         </div>
       </div>
     </div>
 
-    <!-- MODULE 4 -->
+    <!-- DAY 4 -->
     <div class="module-card">
       <div class="module-header">
-        <div class="module-num">04</div>
-        <div class="module-info">
+        <div class="module-header-left">
+          <div class="module-num">Day 04</div>
           <div class="module-title">Performance Marketing</div>
-          <div class="module-tagline">How paid advertising works — Google Ads, Meta Ads, and what makes a campaign successful.</div>
         </div>
-        <div class="module-duration">Session 4 · ~2 hrs</div>
+        <div class="module-duration">2 Hours</div>
       </div>
       <div class="module-body">
-        <div>
-          <div class="module-col-title">Topics Covered</div>
-          <ul class="topic-list">
-            <li>What is performance marketing and how it differs from branding</li>
-            <li>Google Ads: Search, Display, YouTube — how they work</li>
-            <li>Campaign structure: Campaigns, Ad Sets, Ads explained</li>
-            <li>Audience targeting: demographics, interests, intent, lookalikes</li>
-            <li>Meta Ads (Facebook & Instagram): setting up a campaign walkthrough</li>
-            <li>Ad creatives: what makes people click</li>
-            <li>Key metrics: CTR, CPM, CPC, ROAS, CAC — what they mean</li>
-            <li>Retargeting: how brands follow users across the internet</li>
-            <li>Small budget strategy: how to run ads for ₹500 and learn fast</li>
-          </ul>
+        <p class="module-desc">How paid advertising works on Google and Meta — campaign structure, audience targeting, creative strategy, and the metrics that tell you whether it's working.</p>
+        <div class="module-topics">
+          <div class="topic-item">What is performance marketing vs brand marketing</div>
+          <div class="topic-item">Google Ads: Search, Display, YouTube — how each works</div>
+          <div class="topic-item">Campaign structure: Campaigns, Ad Sets, Ads explained</div>
+          <div class="topic-item">Audience targeting: demographics, interests, intent, lookalikes</div>
+          <div class="topic-item">Meta Ads (Facebook & Instagram): campaign walkthrough</div>
+          <div class="topic-item">Ad creatives: what drives people to click</div>
+          <div class="topic-item">Key metrics: CTR, CPM, CPC, ROAS, CAC — what they mean</div>
+          <div class="topic-item">Retargeting: how brands follow users across the internet</div>
         </div>
-        <div>
-          <div class="module-col-title">Practical Activity</div>
-          <div class="practical-box">
-            <div class="practical-label">Hands-On</div>
-            <p class="practical-text">Live walkthrough of the Meta Ads Manager interface. Participants structure a mock campaign — choosing objective, audience, placements, and budget — for a hypothetical local business. No actual money spent.</p>
-          </div>
+        <div class="module-outcome">
+          <strong>Hands-On:</strong> Live walkthrough of Meta Ads Manager. Participants structure a mock campaign — objective, audience, placements, and budget — for a hypothetical local business.
         </div>
       </div>
     </div>
 
-    <!-- MODULE 5 -->
+    <!-- DAY 5 -->
     <div class="module-card">
       <div class="module-header">
-        <div class="module-num">05</div>
-        <div class="module-info">
+        <div class="module-header-left">
+          <div class="module-num">Day 05</div>
           <div class="module-title">Analytics & Reporting</div>
-          <div class="module-tagline">How to read data, understand what's working, and make smarter decisions.</div>
         </div>
-        <div class="module-duration">Session 5 · ~90 min</div>
+        <div class="module-duration">2 Hours</div>
       </div>
       <div class="module-body">
-        <div>
-          <div class="module-col-title">Topics Covered</div>
-          <ul class="topic-list">
-            <li>Introduction to Google Analytics 4 (GA4)</li>
-            <li>Key reports: Traffic sources, Audience, Behaviour, Conversions</li>
-            <li>What is a conversion and how to set one up</li>
-            <li>Understanding bounce rate, session duration, and engagement rate</li>
-            <li>Social media analytics: Instagram Insights, LinkedIn Analytics</li>
-            <li>How to build a simple marketing dashboard</li>
-            <li>Using data to justify marketing decisions to management</li>
-            <li>Monthly reporting template walkthrough</li>
-          </ul>
+        <p class="module-desc">How to read data, understand what's working, and make better decisions. Covering Google Analytics 4, social media insights, and how to build a simple marketing dashboard.</p>
+        <div class="module-topics">
+          <div class="topic-item">Introduction to Google Analytics 4 (GA4)</div>
+          <div class="topic-item">Key reports: Traffic sources, Audience, Behaviour, Conversions</div>
+          <div class="topic-item">What is a conversion and how to set one up</div>
+          <div class="topic-item">Bounce rate, session duration, and engagement rate explained</div>
+          <div class="topic-item">Social media analytics: Instagram Insights, LinkedIn Analytics</div>
+          <div class="topic-item">Building a simple marketing dashboard</div>
+          <div class="topic-item">Using data to justify marketing decisions</div>
+          <div class="topic-item">Monthly reporting template walkthrough</div>
         </div>
-        <div>
-          <div class="module-col-title">Practical Activity</div>
-          <div class="practical-box">
-            <div class="practical-label">Hands-On</div>
-            <p class="practical-text">Participants explore a live GA4 demo account, identify the top traffic source, highest-performing page, and a conversion drop-off point. Then fill out a 1-page marketing report template with their findings.</p>
-          </div>
+        <div class="module-outcome">
+          <strong>Hands-On:</strong> Explore a live GA4 demo account. Identify the top traffic source, best-performing page, and a conversion drop-off point. Fill in a 1-page marketing report template.
         </div>
       </div>
     </div>
 
-    <!-- CAPSTONE -->
-    <div class="module-card" style="border-color: var(--gold-border); background: linear-gradient(135deg, var(--card) 0%, rgba(245,166,35,0.04) 100%);">
-      <div class="module-header">
-        <div class="module-num" style="color: var(--gold); opacity:1;">★</div>
-        <div class="module-info">
-          <div class="module-title" style="color: var(--gold);">Capstone Activity</div>
-          <div class="module-tagline">Apply everything. Build a complete digital marketing plan for a real or mock business.</div>
+    <!-- DAY 6 -->
+    <div class="module-card">
+      <div class="module-header" style="background: linear-gradient(135deg, #1A1410 0%, #2e200f 100%);">
+        <div class="module-header-left">
+          <div class="module-num">Day 06</div>
+          <div class="module-title">AI for Teaching Digital Marketing</div>
         </div>
-        <div class="module-duration">Final Session · ~60 min</div>
+        <div class="module-duration">2 Hours</div>
       </div>
       <div class="module-body">
-        <div>
-          <div class="module-col-title">What Participants Build</div>
-          <ul class="topic-list">
-            <li>Choose a small business (local, familiar, or hypothetical)</li>
-            <li>Define the target audience and funnel</li>
-            <li>Pick 2 digital channels to focus on and explain why</li>
-            <li>Outline an SEO strategy and a social media content plan</li>
-            <li>Design a basic paid campaign structure with targeting</li>
-            <li>List 3 KPIs they would track and what success looks like</li>
-          </ul>
-        </div>
-        <div>
-          <div class="module-col-title">Format</div>
-          <div class="practical-box">
-            <div class="practical-label">Group Presentation</div>
-            <p class="practical-text">Teams of 3–4 present their digital marketing plan to the room. Trainer provides live feedback. This is not assessed — it is designed to consolidate learning and build confidence in applying the concepts taught.</p>
+        <p class="module-desc">How faculty can use AI tools to teach digital marketing more effectively — building lesson plans, generating live examples, creating case studies, and making abstract concepts tangible for students.</p>
+
+        <div style="margin-bottom: 20px;">
+          <div style="font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px;">Framework: The CRAFT Method for Teaching</div>
+          <div class="module-topics">
+            <div class="topic-item"><strong style="color:var(--ink);">C — Context:</strong> Set the teaching scenario for AI</div>
+            <div class="topic-item"><strong style="color:var(--ink);">R — Role:</strong> Assign AI the role of a student, brand, or expert</div>
+            <div class="topic-item"><strong style="color:var(--ink);">A — Ask:</strong> Request specific outputs (quiz, case study, plan)</div>
+            <div class="topic-item"><strong style="color:var(--ink);">F — Format:</strong> Define output format — table, paragraph, slides</div>
+            <div class="topic-item"><strong style="color:var(--ink);">T — Tune:</strong> Refine and iterate until classroom-ready</div>
+            <div class="topic-item">Live prompt-building exercise using ChatGPT and Claude</div>
           </div>
+        </div>
+
+        <div style="font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px;">Tools Walkthrough</div>
+        <div class="dept-body" style="border: 1px solid var(--border-light); border-radius: 10px; overflow: hidden; margin-bottom: 20px;">
+          <div class="dept-row" style="padding: 14px 20px;">
+            <div class="dept-row-title">ChatGPT & Claude</div>
+            <div class="dept-row-desc">Generate lesson plans, student assignments, case studies, and quiz questions for any digital marketing topic in minutes.</div>
+          </div>
+          <div class="dept-row" style="padding: 14px 20px;">
+            <div class="dept-row-title">Canva AI</div>
+            <div class="dept-row-desc">Build presentation slides, infographics, and visual teaching aids for concepts like the marketing funnel, ad formats, and analytics dashboards.</div>
+          </div>
+          <div class="dept-row" style="padding: 14px 20px;">
+            <div class="dept-row-title">Perplexity AI</div>
+            <div class="dept-row-desc">Prepare live, current examples and industry data to use in class — replacing outdated textbook case studies with real, recent brand stories.</div>
+          </div>
+          <div class="dept-row" style="padding: 14px 20px;">
+            <div class="dept-row-title">Google NotebookLM</div>
+            <div class="dept-row-desc">Upload course material, research papers, or syllabus documents and query them conversationally to build teaching notes and FAQs.</div>
+          </div>
+          <div class="dept-row" style="padding: 14px 20px; border-bottom: none;">
+            <div class="dept-row-title">Gamma</div>
+            <div class="dept-row-desc">Turn bullet-point notes into full presentation decks for lectures — with layouts, visuals, and examples auto-generated from a simple text prompt.</div>
+          </div>
+        </div>
+
+        <div class="module-outcome">
+          <strong>Hands-On:</strong> Each faculty member uses ChatGPT or Claude to generate a complete lesson plan for one digital marketing topic from the FDP — including objectives, case study, activities, and assessment questions. Ready to use in their next class.
         </div>
       </div>
     </div>
 
   </div>
-</section>
 
-<!-- OUTCOMES -->
-<section>
-  <div class="sec-label">Learning Outcomes</div>
-  <div class="sec-title">What Faculty Walk Away With</div>
-  <p class="sec-body">By the end of this FDP, every participant will have practical exposure to each channel — not just awareness of it.</p>
+  <hr class="section-divider">
+
+  <!-- LEARNING OUTCOMES -->
+  <div class="section-header">
+    <div class="section-eyebrow">Learning Outcomes</div>
+    <h2 class="section-title">What Faculty Walk Away With</h2>
+  </div>
 
   <div class="outcomes-grid">
-    <div class="outcome-card">
-      <div class="outcome-check">✓</div>
-      <div class="outcome-text">Understand how digital marketing channels work together across the full customer journey</div>
+    <div class="outcome-item">
+      <span class="tick">✓</span>
+      <div class="outcome-text">Understand how all digital marketing channels work together across the customer journey</div>
     </div>
-    <div class="outcome-card">
-      <div class="outcome-check">✓</div>
-      <div class="outcome-text">Perform a basic SEO audit on any website and identify areas for improvement</div>
+    <div class="outcome-item">
+      <span class="tick">✓</span>
+      <div class="outcome-text">Perform a basic SEO audit and identify on-page and technical improvements on any website</div>
     </div>
-    <div class="outcome-card">
-      <div class="outcome-check">✓</div>
-      <div class="outcome-text">Build a social media content calendar and write platform-specific content</div>
+    <div class="outcome-item">
+      <span class="tick">✓</span>
+      <div class="outcome-text">Build a social media content calendar and write platform-specific content for Instagram and LinkedIn</div>
     </div>
-    <div class="outcome-card">
-      <div class="outcome-check">✓</div>
-      <div class="outcome-text">Navigate the Meta Ads Manager and structure a complete paid campaign</div>
+    <div class="outcome-item">
+      <span class="tick">✓</span>
+      <div class="outcome-text">Navigate Meta Ads Manager and structure a complete paid advertising campaign from scratch</div>
     </div>
-    <div class="outcome-card">
-      <div class="outcome-check">✓</div>
-      <div class="outcome-text">Read Google Analytics reports and interpret the metrics that matter</div>
+    <div class="outcome-item">
+      <span class="tick">✓</span>
+      <div class="outcome-text">Read Google Analytics 4 reports and interpret the metrics that reflect marketing performance</div>
     </div>
-    <div class="outcome-card">
-      <div class="outcome-check">✓</div>
-      <div class="outcome-text">Confidently discuss digital marketing strategy in classroom and industry settings</div>
+    <div class="outcome-item">
+      <span class="tick">✓</span>
+      <div class="outcome-text">Use the CRAFT framework to prompt AI tools for lesson plans, case studies, and student exercises</div>
     </div>
-    <div class="outcome-card">
-      <div class="outcome-check">✓</div>
-      <div class="outcome-text">Use AI tools like ChatGPT and Canva AI to support content creation workflows</div>
+    <div class="outcome-item">
+      <span class="tick">✓</span>
+      <div class="outcome-text">Apply AI tools like ChatGPT, Claude, Canva AI, and Perplexity to teaching preparation workflows</div>
     </div>
-    <div class="outcome-card">
-      <div class="outcome-check">✓</div>
-      <div class="outcome-text">Build a mini digital marketing plan for any brand or institution from scratch</div>
-    </div>
-  </div>
-</section>
-
-<!-- COMMERCIALS -->
-<section>
-  <div class="sec-label">Investment</div>
-  <div class="sec-title">Program Investment</div>
-  <p class="sec-body">A flat engagement for the full 6-day program. All sessions, materials, and Digital Scholar completion certificates are included.</p>
-
-  <div class="commercial-box">
-    <div>
-      <div class="commercial-title">FDP Fee — 6-Day Onsite Program</div>
-      <div class="commercial-price">₹60,000</div>
-      <div class="commercial-note">Inclusive of GST &nbsp;·&nbsp; 5 to 10 participants &nbsp;·&nbsp; Onsite at DG Vaishnav College</div>
-      <div style="margin-top: 18px;">
-        <ul class="included-list">
-          <li><span class="check">✓</span> All 5 sessions + capstone activity (6 days, 2 hours each)</li>
-          <li><span class="check">✓</span> Session handouts and resource pack</li>
-          <li><span class="check">✓</span> Digital Scholar completion certificate for all participants</li>
-          <li><span class="check">✓</span> Post-program Q&A access (1 week via email)</li>
-          <li><span class="check">✓</span> Curriculum customised for Marketing Management faculty context</li>
-        </ul>
-      </div>
-    </div>
-    <div style="text-align:right; min-width: 160px;">
-      <div style="font-size:clamp(10px,1.1vw,11px);font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Per Faculty</div>
-      <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,4vw,40px);color:var(--text);line-height:1;">₹6,000–</div>
-      <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,4vw,40px);color:var(--text);line-height:1;">₹12,000</div>
-      <div style="font-size:clamp(10px,1.05vw,11px);color:var(--muted);margin-top:6px;">(depending on 10 or 5 participants)</div>
+    <div class="outcome-item">
+      <span class="tick">✓</span>
+      <div class="outcome-text">Confidently discuss and teach digital marketing strategy with current, industry-relevant examples</div>
     </div>
   </div>
-</section>
 
-<!-- CONTACT -->
-<section>
-  <div class="sec-label">Next Steps</div>
-  <div class="sec-title">Let's Make This Happen</div>
-  <p class="sec-body">To confirm dates, customise the program, or ask any questions — reach out directly. We can typically confirm delivery within 2 weeks of sign-off.</p>
+  <hr class="section-divider">
 
-  <div class="contact-bar">
-    <div class="contact-item">📧 <strong>bde@digitalscholar.in</strong></div>
-    <div class="contact-item">📞 <strong>+91 86104 25655</strong></div>
-    <div class="contact-item">🌐 <strong>digitalscholar.in</strong></div>
-    <div class="contact-item">📍 <strong>Chennai & Mumbai</strong></div>
+  <!-- INCLUSIONS -->
+  <div class="inclusions">
+    <h3>What Every Participant Receives</h3>
+    <div class="inclusions-grid">
+      <div class="inclusion-item"><span class="tick">✓</span><span>Session-wise handouts and resource pack for all 6 days</span></div>
+      <div class="inclusion-item"><span class="tick">✓</span><span>Digital Scholar completion certificate</span></div>
+      <div class="inclusion-item"><span class="tick">✓</span><span>CRAFT prompt library for teaching digital marketing topics</span></div>
+      <div class="inclusion-item"><span class="tick">✓</span><span>AI tool guide: the right tool for the right teaching task</span></div>
+      <div class="inclusion-item"><span class="tick">✓</span><span>Post-programme Q&A access for 1 week via email</span></div>
+      <div class="inclusion-item"><span class="tick">✓</span><span>Curriculum customised to the Marketing Management context</span></div>
+    </div>
   </div>
-</section>
+
+  <hr class="section-divider">
+
+  <!-- COMMERCIALS -->
+  <div class="section-header">
+    <div class="section-eyebrow">Commercial Proposal</div>
+    <h2 class="section-title">Investment</h2>
+  </div>
+
+  <div class="notes-section">
+    <h3>Programme Fee</h3>
+    <div class="note-item">Total investment for the full 6-day FDP: <strong style="color: var(--gold);">&#8377;1,50,000 + GST</strong></div>
+    <div class="note-item">Flat fee for up to 20 faculty from DG Vaishnav College.</div>
+    <div class="note-item">Includes delivery of all 6 sessions onsite, session handouts, resource pack, CRAFT prompt library, and Digital Scholar completion certificates for all participants.</div>
+    <div class="note-item">Programme will be customised to the department's syllabus context and the participants' existing familiarity with digital tools before delivery begins.</div>
+  </div>
+
+  <div class="payment-grid">
+    <div class="payment-card">
+      <div class="payment-card-label">First Instalment</div>
+      <div class="payment-card-num">50%</div>
+      <div class="payment-card-desc">Advance payment along with the signed confirmation to block the programme dates.</div>
+    </div>
+    <div class="payment-card">
+      <div class="payment-card-label">Second Instalment</div>
+      <div class="payment-card-num">50%</div>
+      <div class="payment-card-desc">Balance to be paid before the first session commences.</div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <h2>Ready to confirm the programme?</h2>
+    <p>Reach out to finalise dates, confirm participant count, and discuss any customisations to the curriculum based on the department's needs.</p>
+    <div class="cta-contact">bde@digitalscholar.in</div>
+    <div class="cta-links">+91 86104 25655 &nbsp;·&nbsp; digitalscholar.in</div>
+  </div>
+
+</div>
 
 <!-- FOOTER -->
-<footer class="footer">
-  <div class="footer-brand">Digital Scholar</div>
-  <div class="footer-note">Prepared for DG Vaishnav College, Marketing Management Department. Confidential.</div>
-</footer>
+<div class="footer">
+  <div class="footer-brand">Rishi Jain · Digital Scholar</div>
+  <div class="footer-links">
+    <a href="mailto:bde@digitalscholar.in">bde@digitalscholar.in</a>
+    <a href="https://digitalscholar.in" target="_blank">digitalscholar.in</a>
+  </div>
+  <div class="footer-copy">DG Vaishnav College × Digital Scholar | Faculty Development Programme | Confidential</div>
+</div>
 
 </body>
 </html>
